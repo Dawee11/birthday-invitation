@@ -3,19 +3,17 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💖 You're Invited | Daryah's 18th Birthday</title>
 
-<title>Daryah's 18th Birthday</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -23,87 +21,126 @@
 
 <div id="petals"></div>
 
-<!-- Envelope -->
+<!-- ================= LANDING PAGE ================= -->
 
 <section id="landing">
 
-<div class="envelope">
+    <div class="overlay"></div>
 
-<div class="seal">💌</div>
+    <div class="envelope">
 
-<h3>You've Received an Invitation</h3>
+        <div class="seal">💌</div>
 
-<p>Click below to open</p>
+        <h3>You've Received an Invitation</h3>
 
-<button id="openBtn">Open Invitation</button>
+        <p>
+            I would be delighted to have you celebrate
+            my 18th birthday with me.
+        </p>
 
-</div>
+        <button id="openBtn">Open Invitation</button>
+
+    </div>
 
 </section>
 
-<!-- Invitation -->
+<!-- ================= MAIN CONTENT ================= -->
 
 <section id="mainContent">
 
 <header>
 
-<img src="Downloads/photo2.jpg" class="hero">
+    <h1>Daryah's</h1>
 
-<h1>Daryah</h1>
-
-<h2>18th Birthday Celebration</h2>
+    <h2>18th Birthday Celebration</h2>
 
 </header>
 
+<!-- Countdown -->
+
 <section class="countdown">
 
-<div id="timer"></div>
+    <div id="timer"></div>
 
-<div id="clock"></div>
+    <div id="clock"></div>
 
 </section>
+
+<!-- Save the Date -->
 
 <section class="details-section">
 
     <h1>Save the Date</h1>
 
-    <p class="subtitle">WHEN & WHERE</p>
+    <p class="subtitle">
+        I WOULD LOVE TO CELEBRATE THIS SPECIAL DAY WITH YOU
+    </p>
 
     <div class="details-grid">
 
         <div class="detail-card">
-            <h3>DATE & TIME</h3>
+
+            <h3>📅 DATE & TIME</h3>
+
             <p>
-                Friday, July 17, 2026<br>
-                5:00 PM Onwards
+
+                Thursday<br>
+
+                July 16, 2026<br><br>
+
+                5:00 PM
+
             </p>
+
         </div>
 
         <div class="detail-card">
-            <h3>THE VENUE</h3>
+
+            <h3>📍 VENUE</h3>
+
             <p>
-                Balai Amore Leisure and Farm Resort<br>
-                856 Taboc, Angat, Bulacan
+
+                Balai Amore Leisure and Farm Resort
+
+                <br><br>
+
+                856 Taboc,
+
+                Angat,
+
+                Bulacan
+
             </p>
+
         </div>
 
         <div class="detail-card">
-            <h3>ATTIRE</h3>
+
+            <h3>👗 ATTIRE</h3>
+
             <p>
-                Formal Attire<br>
-                <strong>Motif:</strong> Shades of Red
+
+                Formal Attire
+
+                <br><br>
+
+                Shade of Red ❤️
+
             </p>
+
         </div>
 
     </div>
 
 </section>
 
+<!-- Special Program -->
+
 <section class="program">
 
 <h2>Special Program</h2>
 
-<details>
+    <details>
 
 <summary>🕯️ 18 Candles</summary>
 
@@ -154,7 +191,7 @@
 <li>Ronald Juntilla</li>
 <li>Patrick Ebano</li>
 <li>Fernando Basan Jr.</li>
-  
+
 </ul>
 
 </details>
@@ -212,7 +249,6 @@
 <li>Anthony Cañete</li>
 <li>Anne Cenita</li>
 <li>Ranelyn Cañete</li>
-<li>Ate Leah Mae</li>
 
 </ul>
 
@@ -249,41 +285,64 @@
 
 </section>
 
+<!-- ================= GALLERY ================= -->
+
 <section class="gallery">
 
-<h2>Gallery</h2>
+    <h2>Gallery</h2>
 
-<div class="photos">
+    <div class="photos">
 
-<img src="Downloads/photo1.jpg">
+        <img src="Downloads/photo1.jpg" alt="Photo 1">
 
-<img src="Downloads/photo2.jpg">
+        <img src="Downloads/photo2.jpg" alt="Photo 2">
 
-<img src="Downloads/photo3.jpg">
+        <img src="Downloads/photo3.jpg" alt="Photo 3">
 
-<img src="Downloads/photo4.jpg">
+        <img src="Downloads/photo4.jpg" alt="Photo 4">
 
-</div>
+    </div>
 
 </section>
+
+<!-- ================= RSVP ================= -->
 
 <section class="rsvp">
 
-<h2>Will You Celebrate With Me?</h2>
+    <h2>Will You Celebrate With Me?</h2>
 
-<button id="yesBtn">💖 Yes!</button>
+    <p>I hope you'll be part of this unforgettable milestone.</p>
 
-<button>No, I'm Sorry</button>
+    <div class="rsvp-buttons">
+
+        <button id="yesBtn">💖 Yes, I'll Be There</button>
+
+        <button id="noBtn">🤍 Sorry, I Can't</button>
+
+    </div>
 
 </section>
 
+<!-- ================= FOOTER ================= -->
+
 <footer>
 
-<h2>Thank You</h2>
+    <h2>Thank You</h2>
 
-<p>I can't wait to celebrate this unforgettable milestone with you.</p>
+    <p>
+        Every smile, every laugh, and every memory is more meaningful
+        when shared with the people I love.
+    </p>
 
-<p>Love,<br><strong>Daryah</strong></p>
+    <br>
+
+    <h3>See you on July 16, 2026!</h3>
+
+    <br>
+
+    <p>Love,</p>
+
+    <h2>Daryah</h2>
 
 </footer>
 
