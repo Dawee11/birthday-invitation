@@ -1,228 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Birthday Invitation 🎂</title>
+<title>Daryah's 18th Birthday</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-<style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-body{
-    font-family:Poppins,sans-serif;
-    background:linear-gradient(135deg,#ffd6e8,#ffeef5);
-    overflow:hidden;
-    height:100vh;
-}
+<link rel="stylesheet" href="style.css">
 
-/* Floating Hearts */
-
-.hearts{
-    position:fixed;
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    z-index:0;
-}
-
-.heart{
-    position:absolute;
-    color:#ff7eb3;
-    font-size:20px;
-    animation:float 10s linear infinite;
-}
-
-@keyframes float{
-    from{
-        transform:translateY(100vh);
-        opacity:1;
-    }
-    to{
-        transform:translateY(-120vh);
-        opacity:0;
-    }
-}
-
-/* Main */
-
-.container{
-    position:relative;
-    z-index:5;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    padding:20px;
-}
-
-.card{
-    background:white;
-    width:750px;
-    max-width:95%;
-    border-radius:25px;
-    padding:45px;
-    text-align:center;
-    box-shadow:0 20px 50px rgba(0,0,0,.15);
-    animation:fade 1.5s ease;
-}
-
-@keyframes fade{
-    from{
-        opacity:0;
-        transform:translateY(50px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-h1{
-    font-family:"Great Vibes",cursive;
-    font-size:70px;
-    color:#ff4f9a;
-}
-
-h2{
-    margin-top:10px;
-    color:#d63384;
-}
-
-p{
-    margin-top:20px;
-    color:#666;
-    line-height:1.8;
-}
-
-.info{
-    margin-top:35px;
-    background:#fff5fa;
-    padding:25px;
-    border-radius:20px;
-}
-
-.info h3{
-    color:#ff4f9a;
-    margin-bottom:10px;
-}
-
-button{
-    margin-top:35px;
-    border:none;
-    background:#ff4f9a;
-    color:white;
-    padding:15px 35px;
-    border-radius:40px;
-    font-size:17px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-button:hover{
-    transform:scale(1.05);
-    background:#ff2d83;
-}
-
-.hidden{
-    display:none;
-}
-
-#message{
-    margin-top:30px;
-    color:#ff4f9a;
-    font-size:22px;
-    font-weight:bold;
-}
-
-footer{
-    margin-top:35px;
-    color:#999;
-    font-size:14px;
-}
-
-</style>
 </head>
 
 <body>
 
-<div class="hearts"></div>
+<div id="petals"></div>
 
-<div class="container">
+<!-- Envelope -->
 
-<div class="card">
+<section id="landing">
 
-<h1>You're Invited!</h1>
+<div class="envelope">
 
-<h2>🎂 My Birthday Celebration 🎀</h2>
+<div class="seal">💌</div>
 
-<p>
-I'm turning another year older, and it wouldn't be the same without you!
-Come celebrate this special day with me filled with laughter, food, games, and wonderful memories.
-</p>
+<h3>You've Received an Invitation</h3>
 
-<div class="info">
+<p>Click below to open</p>
 
-<h3>📅 Date</h3>
-<p>July 30, 2026</p>
-
-<h3>⏰ Time</h3>
-<p>4:00 PM</p>
-
-<h3>📍 Venue</h3>
-<p>Your Address Here</p>
+<button id="openBtn">Open Invitation</button>
 
 </div>
 
-<button onclick="showMessage()">
-💖 I'll Be There!
-</button>
+</section>
 
-<div id="message" class="hidden">
-🎉 Thank you! I can't wait to celebrate with you! 🎂💕
+<!-- Invitation -->
+
+<section id="mainContent">
+
+<header>
+
+<img src="images/photo2.jpg" class="hero">
+
+<h1>Daryah</h1>
+
+<h2>18th Birthday Celebration</h2>
+
+</header>
+
+<section class="countdown">
+
+<h3>Countdown</h3>
+
+<div id="timer"></div>
+
+<div id="clock"></div>
+
+</section>
+
+<section class="details">
+
+<h2>You're Invited</h2>
+
+<p><strong>Date</strong><br>July 16, 2026</p>
+
+<p><strong>Time</strong><br>5:00 PM</p>
+
+<p><strong>Venue</strong><br>
+Balai Amore Leisure and Farm Resort<br>
+856 Taboc, Angat, Bulacan</p>
+
+<p><strong>Dress Code</strong><br>
+Formal Attire<br>
+Shade of Red ❤️</p>
+
+<a
+href="https://maps.google.com/?q=Balai+Amore+Leisure+and+Farm+Resort+Angat+Bulacan"
+target="_blank">
+
+<button>View Location</button>
+
+</a>
+
+</section>
+
+<section class="program">
+
+<h2>Special Program</h2>
+
+<details>
+
+<summary>🕯️ 18 Candles</summary>
+
+<ul>
+
+<li>Add names here</li>
+
+</ul>
+
+</details>
+
+<details>
+
+<summary>🌹 18 Roses</summary>
+
+<ul>
+
+<li>Add names here</li>
+
+</ul>
+
+</details>
+
+<details>
+
+<summary>💵 18 Bills</summary>
+
+<ul>
+
+<li>Add names here</li>
+
+</ul>
+
+</details>
+
+<details>
+
+<summary>💎 18 Treasures</summary>
+
+<ul>
+
+<li>Add names here</li>
+
+</ul>
+
+</details>
+
+<details>
+
+<summary>🥂 18 Shots</summary>
+
+<ul>
+
+<li>Add names here</li>
+
+</ul>
+
+</details>
+
+</section>
+
+<section class="gallery">
+
+<h2>Gallery</h2>
+
+<div class="photos">
+
+<img src="images/photo1.jpg">
+
+<img src="images/photo2.jpg">
+
+<img src="images/photo3.jpg">
+
+<img src="images/photo4.jpg">
+
 </div>
+
+</section>
+
+<section class="rsvp">
+
+<h2>Will You Celebrate With Me?</h2>
+
+<button id="yesBtn">💖 Yes!</button>
+
+<button>No, I'm Sorry</button>
+
+</section>
 
 <footer>
-Made with 💗 especially for you.
+
+<h2>Thank You</h2>
+
+<p>I can't wait to celebrate this unforgettable milestone with you.</p>
+
+<p>Love,<br><strong>Daryah</strong></p>
+
 </footer>
 
-</div>
+</section>
 
-</div>
-
-<script>
-
-function showMessage(){
-    document.getElementById("message").classList.remove("hidden");
-}
-
-const hearts=document.querySelector(".hearts");
-
-for(let i=0;i<35;i++){
-
-    const heart=document.createElement("div");
-
-    heart.className="heart";
-
-    heart.innerHTML="❤";
-
-    heart.style.left=Math.random()*100+"%";
-    heart.style.animationDuration=(5+Math.random()*6)+"s";
-    heart.style.fontSize=(15+Math.random()*20)+"px";
-    heart.style.animationDelay=Math.random()*5+"s";
-
-    hearts.appendChild(heart);
-
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
+
 </html>
