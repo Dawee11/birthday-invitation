@@ -264,7 +264,19 @@ letter-spacing:2px;
 
 /* Cards */
 
-.countdown,
+.countdown{
+
+margin:40px auto;
+
+text-align:center;
+
+padding:10px;
+
+background:none;
+
+box-shadow:none;
+
+}
 .details,
 .program,
 .gallery,
@@ -305,11 +317,17 @@ color:#c24d79;
 
 #timer{
 
-font-size:34px;
+font-size:2rem;
 
-font-weight:bold;
+font-weight:600;
 
-margin:15px 0;
+letter-spacing:3px;
+
+color:#b84c73;
+
+margin-bottom:15px;
+
+font-family:'Cormorant Garamond', serif;
 
 }
 
