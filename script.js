@@ -1,111 +1,73 @@
-// ===============================
-// OPEN ENVELOPE
-// ===============================
+// ==============================
+// OPEN INVITATION
+// ==============================
 
 const openBtn = document.getElementById("openBtn");
 const landing = document.getElementById("landing");
-const main = document.getElementById("mainContent");
+const mainContent = document.getElementById("mainContent");
 
 openBtn.addEventListener("click", () => {
 
-    landing.style.opacity = "0";
+    landing.style.display = "none";
+    mainContent.style.display = "block";
 
-    setTimeout(() => {
-
-        landing.style.display = "none";
-
-        main.style.display = "block";
-
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
-
-    },700);
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 
 });
 
-// ===============================
-// LIVE CLOCK
-// ===============================
-
-function updateClock(){
-
-    const now = new Date();
-
-    const options = {
-        weekday:'long',
-        month:'long',
-        day:'numeric',
-        year:'numeric'
-    };
-
-    const date = now.toLocaleDateString('en-US',options);
-
-    const time = now.toLocaleTimeString();
-
-    document.getElementById("clock").innerHTML =
-    `${date}<br>${time}`;
-
-}
-
-setInterval(updateClock,1000);
-
-updateClock();
-
-// ===============================
+// ==============================
 // COUNTDOWN
-// ===============================
+// ==============================
 
-const birthday = new Date("July 16, 2026 17:00:00").getTime();
+const eventDate = new Date("July 16, 2026 17:00:00").getTime();
 
-function countdown(){
+const timer = document.getElementById("timer");
+const clock = document.getElementById("clock");
+
+function updateCountdown(){
 
     const now = new Date().getTime();
 
-    const distance = birthday - now;
+    const distance = eventDate - now;
 
     if(distance <= 0){
 
-        document.getElementById("timer").innerHTML =
-        "🎉 Today is the celebration!";
+        timer.innerHTML = "🎉 TODAY IS THE DAY! 🎉";
+
+        clock.innerHTML = "";
 
         return;
+
     }
 
-    const days = Math.floor(distance/(1000*60*60*24));
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
-    const hours = Math.floor(
-        (distance%(1000*60*60*24))
-        /(1000*60*60)
-    );
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
-    const minutes = Math.floor(
-        (distance%(1000*60*60))
-        /(1000*60)
-    );
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
-    const seconds = Math.floor(
-        (distance%(1000*60))
-        /1000
-    );
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById("timer").innerHTML =
+    timer.innerHTML =
+    `${days} DAYS • ${hours} HOURS • ${minutes} MINUTES • ${seconds} SECONDS`;
 
-    `${days} Days
-    ${hours} Hours
-    ${minutes} Minutes
-    ${seconds} Seconds`;
+    const nowDate = new Date();
+
+    clock.innerHTML =
+    nowDate.toLocaleString();
 
 }
 
-setInterval(countdown,1000);
+setInterval(updateCountdown,1000);
 
-countdown();
+updateCountdown();
 
-// ===============================
+// ==============================
 // FALLING PETALS
-// ===============================
+// ==============================
 
 const petals = document.getElementById("petals");
 
@@ -113,17 +75,17 @@ function createPetal(){
 
     const petal = document.createElement("div");
 
-    petal.className="petal";
+    petal.classList.add("petal");
 
-    petal.innerHTML="🌸";
+    petal.innerHTML = "🌸";
 
-    petal.style.left=Math.random()*100+"vw";
+    petal.style.left = Math.random()*100+"vw";
 
-    petal.style.animationDuration=
-    (5+Math.random()*6)+"s";
+    petal.style.animationDuration = (Math.random()*5+6)+"s";
 
-    petal.style.fontSize=
-    (15+Math.random()*15)+"px";
+    petal.style.opacity = Math.random();
+
+    petal.style.fontSize = (Math.random()*15+15)+"px";
 
     petals.appendChild(petal);
 
@@ -131,62 +93,90 @@ function createPetal(){
 
         petal.remove();
 
-    },11000);
+    },12000);
 
 }
 
-setInterval(createPetal,400);
+setInterval(createPetal,300);
 
-// ===============================
+// ==============================
 // GALLERY LIGHTBOX
-// ===============================
+// ==============================
 
-const images=document.querySelectorAll(".photos img");
-
-images.forEach(img=>{
+document.querySelectorAll(".photos img").forEach(img=>{
 
     img.addEventListener("click",()=>{
 
-        const overlay=document.createElement("div");
+        const lightbox = document.createElement("div");
 
-        overlay.style.position="fixed";
-        overlay.style.top="0";
-        overlay.style.left="0";
-        overlay.style.width="100%";
-        overlay.style.height="100%";
-        overlay.style.background="rgba(0,0,0,.85)";
-        overlay.style.display="flex";
-        overlay.style.justifyContent="center";
-        overlay.style.alignItems="center";
-        overlay.style.zIndex="9999";
+        lightbox.className="lightbox";
 
-        const photo=document.createElement("img");
+        const image=document.createElement("img");
 
-        photo.src=img.src;
+        image.src=img.src;
 
-        photo.style.maxWidth="90%";
-        photo.style.maxHeight="90%";
-        photo.style.borderRadius="20px";
-        photo.style.boxShadow="0 20px 50px rgba(0,0,0,.4)";
+        lightbox.appendChild(image);
 
-        overlay.appendChild(photo);
+        document.body.appendChild(lightbox);
 
-        overlay.onclick=()=>overlay.remove();
+        lightbox.addEventListener("click",()=>{
 
-        document.body.appendChild(overlay);
+            lightbox.remove();
+
+        });
 
     });
 
 });
 
-// ===============================
-// RSVP
-// ===============================
+// ==============================
+// RSVP BUTTONS
+// ==============================
 
-const yes=document.getElementById("yesBtn");
+const yesBtn = document.getElementById("yesBtn");
 
-yes.addEventListener("click",()=>{
+const noBtn = document.getElementById("noBtn");
 
-    alert("💖 Thank you! I can't wait to celebrate with you!");
+yesBtn.addEventListener("click",()=>{
+
+    alert("💖 Yay! I can't wait to celebrate with you! 💖");
+
+});
+
+noBtn.addEventListener("click",()=>{
+
+    alert("Thank you for letting me know. You'll be missed! 🌸");
+
+});
+
+// ==============================
+// SMOOTH FADE WHEN SCROLLING
+// ==============================
+
+const observer = new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity="1";
+
+            entry.target.style.transform="translateY(0)";
+
+        }
+
+    });
+
+});
+
+document.querySelectorAll(".program,.gallery,.rsvp,.details-section,footer").forEach(section=>{
+
+    section.style.opacity="0";
+
+    section.style.transform="translateY(40px)";
+
+    section.style.transition=".8s";
+
+    observer.observe(section);
 
 });
